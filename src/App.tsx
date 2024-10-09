@@ -8,9 +8,7 @@ import { setCodeGenerationLoading, setGeneratedCode, updateGeneratedCode } from 
 import { CodeXml, Loader, RotateCcw, StepForward, X } from "lucide-react";
 
 function App() {
-  const API_URL = import.meta.env.VITE_API_URL;
-  console.log(API_URL);
-  
+  const API_URL = import.meta.env.VITE_API_URL;  
   const [prompt, setPrompt] = useState<string>("");
   const dispatch = useAppDispatch();
   const aiGeneratedCode = useAppSelector((state) => state.codeGenerationSlice.generatedCode);
