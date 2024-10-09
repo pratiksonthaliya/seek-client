@@ -25,7 +25,7 @@ function App() {
     try {
       dispatch(setCodeGenerationLoading(true));
       setPrompt("");
-      let aiGeneratedCode = await axios.post(API_URL as string, {prompt: prompt});
+      let aiGeneratedCode = await axios.post(`${API_URL}/api` as string, {prompt: `Generate Code: ${prompt}`});
       if(aiGeneratedCode.data.response.startsWith("$~~~$")) {
         alert("Error generating code. Please provide a valid prompt.");
         return;
@@ -49,7 +49,7 @@ function App() {
     try {
       setPrompt("");
       dispatch(setCodeGenerationLoading(true));
-      let continueCode = await axios.post(API_URL as string, {prompt: prompt, content: aiGeneratedCode});
+      let continueCode = await axios.post(`${API_URL}/api/continue` as string, {prompt: `Generate Code: ${prompt}`, content: aiGeneratedCode});
       if(continueCode.data.response.startsWith("$~~~$")) {
         alert("Error generating code. Please provide a valid prompt.");
         return;
