@@ -17,6 +17,8 @@ Seek is a web application that leverages the Blackbox.ai wrapper to fetch code s
   - Redux
   - Typescript
   - Tailwind CSS
+  - Shadcn UI
+  - Framer Motion
   - Lucide React (for icons)
 
 - **Backend**:
